@@ -9,6 +9,7 @@ const bytecode = ProductInstanceJson.bytecode;
 const gasPrice = web3.utils.toWei("20", "gwei");
 const gas = 5000000;
 
+//Loads the contract initial and data from the ethereum network
 export async function loadData() {
   let accountList = localStorage.getItem("accountList");
   let contractAddress = localStorage.getItem("contractAddress");
@@ -58,6 +59,7 @@ function deployContract() {
     });
 }
 
+//Registers a product into the smart contract
 export async function registerProduct(product) {
   let supplierAddress = JSON.parse(localStorage.getItem("accountList"))[0];
   let myContract = new web3.eth.Contract(
@@ -78,6 +80,7 @@ export async function registerProduct(product) {
     });
 }
 
+//Retrieves a product from the smart contract
 export async function getProduct(productHash) {
   let myContract = new web3.eth.Contract(
     abi,
@@ -92,6 +95,7 @@ export async function getProduct(productHash) {
   });
 }
 
+//Transfers product to a different location.
 export async function transferProductLocation(transfer) {
   let myContract = new web3.eth.Contract(
     abi,
@@ -109,6 +113,7 @@ export async function transferProductLocation(transfer) {
     });
 }
 
+//Transfers product to a different owner address .
 export async function transferProductOwner(transfer) {
   console.log(transfer);
   let myContract = new web3.eth.Contract(
@@ -126,7 +131,7 @@ export async function transferProductOwner(transfer) {
       gasPrice: gasPrice,
     });
 }
-
+//Finds the given owner address' existence in the account list.
 export function searchOwner(ownerAddress) {
   let accountList = JSON.parse(localStorage.getItem("accountList"));
   console.log(accountList);
