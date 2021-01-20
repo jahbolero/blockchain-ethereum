@@ -36,6 +36,7 @@ function ProductTransferOwner({ onProductTransferOwner, ownerAddress }) {
         toast.error(error.data[errorKey].reason);
       });
   }
+
   return (
     <div>
       <h3 className="text-center">Transfer Product Owner</h3>

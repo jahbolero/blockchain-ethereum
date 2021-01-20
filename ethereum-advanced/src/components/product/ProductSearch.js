@@ -15,7 +15,7 @@ function ProductSearch({ onProductSearch }) {
       .getProduct(productQuery)
       .then((result) => {
         console.log(result);
-        var newProduct = {};
+        let newProduct = {};
         newProduct.name = result.name;
         newProduct.productionDate = new Date(parseInt(result.productionDate));
         newProduct.currentLocation = result.currentLocation;
@@ -35,6 +35,7 @@ function ProductSearch({ onProductSearch }) {
         toast.error(error.data[errorKey].reason);
       });
   }
+
   return (
     <div>
       <h3 className="text-center">Search Product</h3>

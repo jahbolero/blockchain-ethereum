@@ -29,14 +29,15 @@ function SupplierPage() {
     console.log();
     setProduct({ ...product, [target.name]: target.value });
   }
+
   function handleRegisterProduct() {
     setProductList(JSON.parse(localStorage.getItem("productList")));
   }
+
   function handleProductSearch(product) {
     setProduct(product);
   }
-  function handleProductTransferOwner(transfer) {}
-  function handleProductTransferLocation(transfer) {}
+
   return (
     <div>
       <h2>Supplier Page({supplierAddress})</h2>
@@ -76,13 +77,13 @@ function SupplierPage() {
         </Route>
         <Route path={`${path}/TransferOwner`}>
           <ProductTransferOwner
-            onProductTransferOwner={handleProductTransferOwner}
+            onProductTransferOwner={() => {}}
             ownerAddress={supplierAddress}
           ></ProductTransferOwner>
         </Route>
         <Route path={`${path}/TransferLocation`}>
           <ProductTransferLocation
-            onProductTransferLocation={handleProductTransferLocation}
+            onProductTransferLocation={() => {}}
             ownerAddress={supplierAddress}
           ></ProductTransferLocation>
         </Route>

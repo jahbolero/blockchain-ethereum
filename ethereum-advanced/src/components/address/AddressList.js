@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function AddressList({ addressList }) {
   const [count, setCount] = useState(0);
+
   return (
     <div>
       <h3 className="text-center">Address List</h3>

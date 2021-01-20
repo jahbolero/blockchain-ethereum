@@ -30,6 +30,7 @@ function ProductTransferLocation({ onProductTransferLocation, ownerAddress }) {
       });
     onProductTransferLocation(transfer);
   }
+
   return (
     <div>
       <h3 className="text-center">Transfer Product Location</h3>

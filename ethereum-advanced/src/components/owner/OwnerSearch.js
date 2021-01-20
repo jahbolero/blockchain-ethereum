@@ -6,6 +6,7 @@ function OwnerSearch({ owner, onOwnerChange, onSearchOwner }) {
     event.preventDefault();
     onSearchOwner(owner.address);
   }
+
   return (
     <div>
       <h2>Product Owner({owner.found === true ? owner.address : ""})</h2>

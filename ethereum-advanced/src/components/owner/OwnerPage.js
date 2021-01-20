@@ -25,9 +25,11 @@ function OwnerPage() {
       setProductList(JSON.parse(localStorage.getItem("productList")));
     });
   }, []);
+
   function handleChange({ target }) {
     setOwner({ ...owner, [target.name]: target.value, found: false });
   }
+
   function handleSearchOwner(address) {
     if (ethApi.searchOwner(address)) {
       toast.success("Owner address found");
@@ -37,9 +39,11 @@ function OwnerPage() {
       toast.error("Owner not found");
     }
   }
+
   function handleProductSearch(product) {
     setProduct(product);
   }
+
   return (
     <div>
       <OwnerSearch

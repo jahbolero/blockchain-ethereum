@@ -14,7 +14,7 @@ export async function loadData() {
   let contractAddress = localStorage.getItem("contractAddress");
   let productList = localStorage.getItem("productList");
 
-  var accounts = await web3.eth.getAccounts();
+  let accounts = await web3.eth.getAccounts();
   accounts = accounts.splice(0, 5);
   if (accountList === null) {
     localStorage.setItem("accountList", JSON.stringify(accounts));
@@ -83,7 +83,7 @@ export async function getProduct(productHash) {
     abi,
     localStorage.getItem("contractAddress")
   );
-  var supplierAddress = JSON.parse(localStorage.getItem("accountList"))[0];
+  let supplierAddress = JSON.parse(localStorage.getItem("accountList"))[0];
 
   return await myContract.methods.getProduct(productHash).call({
     from: supplierAddress,
@@ -108,6 +108,7 @@ export async function transferProductLocation(transfer) {
       gasPrice: gasPrice,
     });
 }
+
 export async function transferProductOwner(transfer) {
   console.log(transfer);
   let myContract = new web3.eth.Contract(
