@@ -25,8 +25,8 @@ This is a simple custom voting blockchain implementation.
 
 ### How it works
 
-`1. Transactions are created when an upvote or downvote is made.`
+1. Transactions are created when an upvote or downvote is made.
 
-`2. "Create a block" function will copy currently existing transactions and add it to its transaction list.`
+2. "Create a block" function will copy currently existing transactions and add it to its transaction list.
 
-`3. "Consume Random Block" will randomly select a block to process and add to the chain. The remaining pending blocks will disappear and the transactions that aren't processed will remain "floating" awaiting for another block to take them.`
+3. "Consume Random Block" will randomly select a block to process and add to the chain. The remaining pending blocks will disappear and the transactions that aren't processed will remain "floating" awaiting for another block to take them.
