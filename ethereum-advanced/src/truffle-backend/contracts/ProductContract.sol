@@ -20,6 +20,7 @@ contract ProductContract{
         require(!compareStrings(currentLocation,""),"Location can't be empty");
         require(!compareStrings(hash,""),"Hash can't be empty");
         require(compareStrings(products[hash].name,""), "Product hash already exists");
+        require(productionDate <= block.timestamp, "The production date cannot be initialized to a date in the future.");
         productInstance storage newProduct = products[hash];
         newProduct.name = name;
         newProduct.productionDate = productionDate;
